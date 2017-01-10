@@ -1,1 +1,24 @@
-console.log("test");
+$(function() {
+
+	$("#submitForm").submit(function(e) {
+		e.preventDefault();
+		
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
