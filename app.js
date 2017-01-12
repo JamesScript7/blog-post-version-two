@@ -43,16 +43,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 app.post('/blog', function(req,res) {
 
   var blogPost = {
     title: req.body.title,
-    comments: req.body.comment,
+    comment: req.body.comment,
     date: new Date()
   }
 
   res.json(blogPost);
-  
+
 });
 
 
