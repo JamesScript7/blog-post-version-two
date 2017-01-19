@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+h3 {
+	color: #404040;
+}
+
+#list div {
+	margin: 20px 0 0 20px;
+	padding: 10px;
+	width: 400px;
+	border: 1px solid gold;
+}
+
+#date-out {
+	font-weight: bold;
+	color: #909090;
+}

@@ -4,6 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var moment = require('moment');
+
+// var Sequelize = require('sequelize');
+// var databaseURL = 'sqlite://dev.sqlite3';
+// var sequelize = new Sequelize(databaseURL);
+
+var port = 8080;
+
+// sequelize.sync().then(function(){
+//   app.listen(port, function(){
+//     console.log(`ExpressJS started on port ${port}`);
+//   });
+// }).catch(function(err){
+//   console.error(err);
+// });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -43,22 +58,44 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// var BlogPost = sequelize.define('blogPost', {
+//   title: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     unique: true
+//   },
+  
+//   comment: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//     unique: true
+//   },
+
+// });
 
 app.post('/blog', function(req,res) {
+  
+  // BlogPost.create({
+  //   title: req.body.title,
+  //   comment: req.body.comment
+  // })
+  // .then(function(row) {
+  //   res.json(row);
+  // })
 
-  var blogPost = {
+  var posts = {
     title: req.body.title,
     comment: req.body.comment,
     date: new Date()
   }
 
-  res.json(blogPost);
-
+    res.json(posts);
 });
 
 
-app.listen(8080, function() {
-	console.log("ExpressJS has started!!");
+
+app.listen(port, function(){
+    console.log(`ExpressJS started on port ${port}`);
 });
 
 module.exports = app;
